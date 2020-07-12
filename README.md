@@ -1,5 +1,9 @@
 # AngularEmailClient
 
+
+Progress for Email Client front-end using Angular and Mock Bakend API's for now...
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Development server
