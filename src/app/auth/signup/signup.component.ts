@@ -24,7 +24,7 @@ export class SignupComponent implements OnInit {
         Validators.pattern(/^([a-z]|[0-9])+$/)
     ], 
     [
-      Validators.uniqueUsername.validate
+      this.uniqueUsername.validate
     ]
     ),
     password: new FormControl('',
