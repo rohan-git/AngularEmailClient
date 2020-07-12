@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormControl, AsyncValidator } from '@angular/forms';
 
 import {  map, catchError } from 'rxjs/operators';
+import { observable, Observable, of } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class UniqueUsername implements AsyncValidator {
@@ -23,7 +24,11 @@ export class UniqueUsername implements AsyncValidator {
                         return null;
                     }
                 }
-            )
+            ), catchError((error) => {
+
+                console.log(error);
+                return of({availableUsername: false});
+            })
         );
 
 
