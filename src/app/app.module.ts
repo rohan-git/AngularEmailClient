@@ -11,8 +11,8 @@ import { AuthModule } from './auth/auth.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     AuthModule
   ],
   providers: [],
