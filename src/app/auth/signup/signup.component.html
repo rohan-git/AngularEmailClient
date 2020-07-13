@@ -18,8 +18,14 @@
     <hr />
 
     <div>
-        <button ngClass="{disabled: authForms.errors}" class="ui subimt button primary">Submit</button>
-        <button class="ui subimt button warning">Reset</button>
+        <button type="submit" 
+                [disabled]="authForm.invalid"
+                class="ui subimt button primary">
+        Submit
+        </button>
+        <button class="ui subimt button warning">
+        Reset
+        </button>
     </div>
 
 </form>
