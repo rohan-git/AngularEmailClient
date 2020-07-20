@@ -28,10 +28,26 @@ export class AuthService {
   }
   
   signup(credentials: SignupCredentials){
-    return this.http.post<SignupResponse>(this.rootUrl + '/auth/signup', credentials).pipe(
+
+    return this.http.post<SignupResponse>(this.rootUrl + '/auth/signup', credentials, {
+      withCredentials:true
+    })
+    .pipe(
       tap(()=> {
         this.signedIn$.next(true);
       })
     );
+
+  }
+  checkAuth(){
+
+    return this.http.get(this.rootUrl + '/auth/signedIn',{
+      withCredentials: true
+    }).pipe(
+      tap((e)=> {
+          console.log(e);
+      })
+    );
+    
   }
 }
