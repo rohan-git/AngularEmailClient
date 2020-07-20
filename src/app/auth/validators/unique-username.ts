@@ -15,8 +15,7 @@ export class UniqueUsername implements AsyncValidator {
         const { value } = formControl;
         console.log(value);
 
-        return this.authService.usernameAvailable(value)
-                .pipe(
+        return this.authService.usernameAvailable(value).pipe(
                     map(value => {
                             if(value.username) {
                                 return null;

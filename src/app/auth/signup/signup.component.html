@@ -20,7 +20,8 @@
     <div>
         <button type="submit" 
                 [disabled]="authForm.invalid"
-                class="ui subimt button primary">
+                class="ui subimt button primary"
+                (click)="onSubmit()">
         Submit
         </button>
         <button class="ui subimt button warning">
