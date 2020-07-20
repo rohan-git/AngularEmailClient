@@ -6,13 +6,18 @@
     <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
     <app-input inputType="password" label="Password Confirmation" [control]="authForm.get('passwordConfirmation')"></app-input>
 
-    
     <div *ngIf="showPasswordErrors()" class="ui red basic label">
         <p *ngIf="authForm.errors.passwordsDontMatch">
             Password and Password confirmation must match
         </p>
+        <p *ngIf="authForm.errors.noConnection">
+            No internet connection! 
+        </p>
+        <p *ngIf="authForm.errors.unkownError">
+            Unkown Error Occurred!
+        </p>
     </div>
-    
+
     {{ authForm.errors | json }}
     
     <hr />
